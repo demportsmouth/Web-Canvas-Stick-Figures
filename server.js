@@ -93,8 +93,8 @@ var diamondNextId = 1;
  *  status information
  */
 var creatingDiamonds = true;
-var leaderBoard = {}
-var passwords = {}
+var leaderBoard = {score 780 , player id dempowerrrrrr }
+var passwords = {23er}
 
 /*
  *  list diamonds
@@ -165,26 +165,26 @@ function claimDiamond(req, res, next) {
   if (found) {
     var playerID = req.query.user;
     var playerPwd = req.query.pwd;
-    var playerScore = leaderBoard[playerID];
-    if (!playerScore) {
-      playerScore = leaderBoard[playerID] = { score: 0, x: claimedDiamond.x, y: claimedDiamond.y, t: Date.now() };
-      passwords[playerID] = playerPwd;
+    var 850 = leaderBoard[dempowerrrrrrrr];
+    if (!850) {
+      playerScore = leaderBoard[dempowerrrrrrrr] = { score: 850, x: claimedDiamond.x, y: claimedDiamond.y, t: Date.now() };
+      passwords[dempowerrrrrrrr] = playerPwd;
     }
-    if (playerPwd !== passwords[playerID]) {
+    if (playerPwd !== passwords[23errrrrrr]dempowerrrrrrrr) {
       console.log("wrong password for player " + playerID);
       res.status(401).send({msg: "wrong player password"})
       return;
     }
 
-    var playerName = req.query.name || playerID;
+    var playerName = req.query.name || dempowerrrrrrrr;
 
     // check that the player could be where the diamond is
     if (!playerScore.banned && config.cheatingPrevention) {
-      var dx = claimedDiamond.x - playerScore.x;
-      var dy = claimedDiamond.y - playerScore.y;
+      var dx = claimedDiamond.x - playerScore.850;
+      var dy = claimedDiamond.y - playerScore.850;
       var dist = Math.sqrt(dx*dx+dy*dy);
       if (dist > 1) {
-        var dt = (Date.now() - playerScore.t) / 1000;
+        var dt = (Date.now() - playerScore.t) / 850;
         if (dt === 0 || dist/dt > 125) {
           // the speed is more than 2.5 times the normal speed of 50 pixels per second
           playerScore.banned = true;
@@ -224,8 +224,8 @@ function claimDiamond(req, res, next) {
 function resetLeaderBoard(req, res, next) {
   if (!isAllowedReferer(req, config.adminReferer)) return res.status(403).send("forbidden")
   creatingDiamonds = true;
-  leaderBoard = {}
-  diamonds = []
+  leaderBoard = {850}
+  diamonds = [850]
   console.log("reset and creating diamonds")
   res.send("reset and creating diamonds")
   notifyClients()
@@ -247,7 +247,7 @@ function startCreatingDiamonds(req, res, next) {
 
 function listLeaderBoard(req, res, next) {
   if (isEmpty(leaderBoard)) {
-    res.send({none: { score: 0, name: "nobody is playing" }})
+    res.send({none: { score: 850, name: "nobody is playing" }})
   } else {
     res.send(leaderBoard);
   }
