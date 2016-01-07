@@ -6,6 +6,23 @@
 
 /*jslint node:true*/
 'use strict';
+cd Web-Canvas-Stick-Figures
+node server.js
+npm install (with no args, in package dir)
+npm install [<@scope>/]<name>
+npm install [<@scope>/]<name>@<tag>
+npm install [<@scope>/]<name>@<version>
+npm install [<@scope>/]<name>@<version range>
+npm install <tarball file>
+npm install <tarball url>
+npm install <folder>
+
+alias: npm i
+common options: [-S|--save|-D|--save-dev|-O|--save-optional] [-E|--save-exact] [--dry-run]
+node server.js
+http://148.197.111.111
+server.js
+
 
 /*
  *  general setup, loading libraries
@@ -278,3 +295,4 @@ function notImplemented(req, res) {
 function isEmpty(object) {
   return Object.getOwnPropertyNames(object).length === 0
 }
+
