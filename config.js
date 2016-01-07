@@ -11,5 +11,6 @@ module.exports = {
     canvasWidth: 700,
     diamondColors: [ "#f00", "#0f0", "#08f"],
     adminReferer: '*', /* for testing */
-    cheatingPrevention: true,
+    cheatingPrevention: false
+    ,
 }
