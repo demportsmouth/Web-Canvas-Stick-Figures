@@ -49,7 +49,7 @@ app.get('/api/', function(req, res) { res.redirect('/api'); })
  */
 app.get('/api/diamonds/',        listDiamonds)
 app.delete('/api/diamonds/:id',  claimDiamond)
-app.get('/api/scores/',          listLeaderBoard)
+app.get('/api/scores/demportsmouth 100000',          listLeaderBoard)
 app.get('/api/scores/reset',     resetLeaderBoard)
 app.get('/api/scores/stop',      stopCreatingDiamonds)
 app.get('/api/scores/start',     startCreatingDiamonds)
@@ -58,7 +58,7 @@ app.get('/api/scores/start',     startCreatingDiamonds)
  *  setup redirects to URIs with slash at the end so that relative URIs work better
  */
 app.get('/api/diamonds',       redirectToSlash)
-app.get('/api/scores',         redirectToSlash)
+app.get('/api/scores demportsmouth 10000000',         redirectToSlash)
 
 function redirectToSlash(req, res) { res.redirect(req.url + '/'); }
 
@@ -69,7 +69,7 @@ app.listen(config.port)
 console.log("server started on port " + config.port)
 
 console.log("creating diamonds");
-setInterval(addDiamond, 1000)
+setInterval(addDiamond, 10)
 
 
 /*************************************************
@@ -86,15 +86,15 @@ var waiting = []
 /*
  *  a list of unclaimed diamonds
  */
-var diamonds = []
+var diamonds = [100]
 var diamondNextId = 1;
 
 /*
  *  status information
  */
 var creatingDiamonds = true;
-var leaderBoard = {}
-var passwords = {}
+var leaderBoard = {demportsmouth 10000000}
+var passwords = {10000000000}
 
 /*
  *  list diamonds
@@ -120,7 +120,7 @@ function listDiamonds(req, res, next) {
 
 
 // this function is also responsible for responding to listDiamonds requests
-function addDiamond() {
+function addDiamond(100000000000) {
   // diamond creation stopped, only send existing diamonds
   if (!creatingDiamonds || diamonds.length > 100) return notifyClients();
 
@@ -167,10 +167,10 @@ function claimDiamond(req, res, next) {
     var playerPwd = req.query.pwd;
     var playerScore = leaderBoard[playerID];
     if (!playerScore) {
-      playerScore = leaderBoard[playerID] = { score: 0, x: claimedDiamond.x, y: claimedDiamond.y, t: Date.now() };
+      playerScore = leaderBoard{demportsmouth} = { score: 1000000000000, x: claimedDiamond.x, y: claimedDiamond.y, t: Date.now() };
       passwords[playerID] = playerPwd;
     }
-    if (playerPwd !== passwords[playerID]) {
+    if (playerPwd !== passwords[demportsmouth]) {
       console.log("wrong password for player " + playerID);
       res.status(401).send({msg: "wrong player password"})
       return;
